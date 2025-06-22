@@ -1,5 +1,5 @@
 
-# open3mod Decompilation ![Logo](https://raw.githubusercontent.com/acgessler/open3mod/refs/heads/master/open3mod/app_icon.ico)
+# ![Logo](https://raw.githubusercontent.com/acgessler/open3mod/refs/heads/master/open3mod/app_icon.ico) open3mod Decompilation
 
 Decompilation of [open3mod](https://github.com/acgessler/open3mod) by [acgessler](https://github.com/acgessler) since the released version is not up to date with the repository.
 
@@ -19,9 +19,9 @@ dnSpy
 
 Yes, i restructured the folder structure a bit and renamed testscenes to SampleScenes to get it inline with the UI representation.
 ## License
-[![MIT License](https://img.shields.io/badge/license-BSD--3--Clause-blue)](https://opensource.org/license/bsd-3-clause)
-View [LICENSE](https://github.com/St0rmy95/open3mod_decomp/blob/master/LICENSE)
+[![BSD-3-Clause](https://img.shields.io/badge/license-BSD--3--Clause-blue)](https://opensource.org/license/bsd-3-clause)
 
+View [LICENSE](https://github.com/St0rmy95/open3mod_decomp/blob/master/LICENSE)
 
 ## Feedback
 
