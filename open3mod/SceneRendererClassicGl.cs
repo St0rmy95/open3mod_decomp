@@ -79,7 +79,7 @@ namespace open3mod
 			array[2] = dir.Z;
 			GL.Light(light, pname, array);
 			Vector3 vec = new Vector3(1f, 1f, 1f);
-			vec *= (0.25f + 1.5f * (float)GraphicsSettings.Default.OutputBrightness / 100f) * 1.5f;
+			vec *= (0.25f + 1.5f * (float)Properties.GraphicsSettings.Default.OutputBrightness / 100f) * 1.5f;
 			GL.Light(LightName.Light0, LightParameter.Diffuse, new float[]
 			{
 				vec.X,
@@ -231,7 +231,7 @@ namespace open3mod
 			{
 				this.Owner.MaterialMapper.ApplyMaterial(mesh, this.Owner.Raw.Materials[mesh.MaterialIndex], flags.HasFlag(RenderFlags.Textured), flags.HasFlag(RenderFlags.Shaded));
 			}
-			if (GraphicsSettings.Default.BackFaceCulling)
+			if (Properties.GraphicsSettings.Default.BackFaceCulling)
 			{
 				GL.FrontFace(FrontFaceDirection.Ccw);
 				GL.CullFace(CullFaceMode.Back);

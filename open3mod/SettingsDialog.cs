@@ -5,7 +5,6 @@ using System.Diagnostics;
 using System.Drawing;
 using System.Linq;
 using System.Windows.Forms;
-using CoreSettings;
 
 namespace open3mod
 {
@@ -16,23 +15,23 @@ namespace open3mod
 		public SettingsDialog()
 		{
 			this.InitializeComponent();
-			this._gSettings = GraphicsSettings.Default;
+			this._gSettings = Properties.GraphicsSettings.Default;
 			this.InitTexResolution();
 			this.InitTexFilter();
 			this.InitMultiSampling();
 			this.InitLightingQuality();
 			this.InitRenderingBackend();
-			if (CoreSettings.Default.AdditionalTextureFolders != null)
+			if (Properties.CoreSettings.Default.AdditionalTextureFolders != null)
 			{
-				this.folderSetDisplaySearchPaths.Folders = CoreSettings.Default.AdditionalTextureFolders.Cast<string>().ToArray<string>();
+				this.folderSetDisplaySearchPaths.Folders = Properties.CoreSettings.Default.AdditionalTextureFolders.Cast<string>().ToArray<string>();
 			}
 			this.folderSetDisplaySearchPaths.Change += delegate(object sender)
 			{
-				if (CoreSettings.Default.AdditionalTextureFolders == null)
+				if (Properties.CoreSettings.Default.AdditionalTextureFolders == null)
 				{
-					CoreSettings.Default.AdditionalTextureFolders = new StringCollection();
+					Properties.CoreSettings.Default.AdditionalTextureFolders = new StringCollection();
 				}
-				StringCollection additionalTextureFolders = CoreSettings.Default.AdditionalTextureFolders;
+				StringCollection additionalTextureFolders = Properties.CoreSettings.Default.AdditionalTextureFolders;
 				additionalTextureFolders.Clear();
 				foreach (string value in this.folderSetDisplaySearchPaths.Folders)
 				{
@@ -205,7 +204,7 @@ namespace open3mod
 		}
 
 		// Token: 0x0400023C RID: 572
-		private GraphicsSettings _gSettings;
+		private Properties.GraphicsSettings _gSettings;
 
 		// Token: 0x0400023D RID: 573
 		private MainWindow _main;

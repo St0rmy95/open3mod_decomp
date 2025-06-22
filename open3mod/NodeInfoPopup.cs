@@ -26,7 +26,7 @@ namespace open3mod
 		}
 
 		// Token: 0x0600022E RID: 558 RVA: 0x00012B34 File Offset: 0x00010D34
-		public void Populate(Scene scene, Node node, NodePurpose purpose)
+		public void Populate(Assimp.Scene scene, Node node, NodePurpose purpose)
 		{
 			switch (purpose)
 			{

@@ -284,7 +284,7 @@ namespace open3mod
 		private readonly Scene _scene;
 
 		// Token: 0x04000224 RID: 548
-		private readonly Scene _raw;
+		private readonly Assimp.Scene _raw;
 
 		// Token: 0x04000225 RID: 549
 		private int _activeAnim = -2;

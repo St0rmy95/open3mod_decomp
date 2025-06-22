@@ -5,7 +5,6 @@ using System.IO;
 using System.Linq;
 using Assimp;
 using Assimp.Configs;
-using CoreSettings;
 using OpenTK;
 
 namespace open3mod
@@ -35,7 +34,7 @@ namespace open3mod
 
 		// Token: 0x17000075 RID: 117
 		// (get) Token: 0x06000297 RID: 663 RVA: 0x00015BF3 File Offset: 0x00013DF3
-		public Scene Raw
+		public Assimp.Scene Raw
 		{
 			get
 			{
@@ -269,7 +268,7 @@ namespace open3mod
 		private static PostProcessSteps GetPostProcessStepsFlags()
 		{
 			PostProcessSteps postProcessSteps = PostProcessPreset.TargetRealTimeMaximumQuality;
-			CoreSettings @default = CoreSettings.Default;
+			Properties.CoreSettings @default = Properties.CoreSettings.Default;
 			if (@default.ImportGenNormals)
 			{
 				postProcessSteps |= PostProcessSteps.GenerateSmoothNormals;
@@ -348,7 +347,7 @@ namespace open3mod
 		// Token: 0x060002A9 RID: 681 RVA: 0x00016028 File Offset: 0x00014228
 		private void CreateRenderingBackend()
 		{
-			if (GraphicsSettings.Default.RenderingBackend == 0)
+			if (Properties.GraphicsSettings.Default.RenderingBackend == 0)
 			{
 				this._mapper = new MaterialMapperClassicGl(this);
 				this._renderer = new SceneRendererClassicGl(this, this._sceneMin, this._sceneMax);
@@ -615,7 +614,7 @@ namespace open3mod
 		private readonly string _baseDir;
 
 		// Token: 0x0400020B RID: 523
-		private readonly Scene _raw;
+		private readonly Assimp.Scene _raw;
 
 		// Token: 0x0400020C RID: 524
 		private readonly Vector3 _sceneCenter;

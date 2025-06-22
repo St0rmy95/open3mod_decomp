@@ -3,7 +3,6 @@ using System.ComponentModel;
 using System.Diagnostics;
 using System.Drawing;
 using System.Windows.Forms;
-using CoreSettings;
 
 namespace open3mod
 {
@@ -14,7 +13,7 @@ namespace open3mod
 		public DonationDialog()
 		{
 			this.InitializeComponent();
-			this.labelCount.Text = "In total, you have opened " + CoreSettings.Default.CountFilesOpened + " 3D models";
+			this.labelCount.Text = "In total, you have opened " + Properties.CoreSettings.Default.CountFilesOpened + " 3D models";
 		}
 
 		// Token: 0x06000084 RID: 132 RVA: 0x00004B00 File Offset: 0x00002D00
@@ -26,7 +25,7 @@ namespace open3mod
 		// Token: 0x06000085 RID: 133 RVA: 0x00004B08 File Offset: 0x00002D08
 		private void DontAskAgain(object sender, EventArgs e)
 		{
-			CoreSettings.Default.DonationUseCountDown = -1;
+			Properties.CoreSettings.Default.DonationUseCountDown = -1;
 			base.Close();
 		}
 

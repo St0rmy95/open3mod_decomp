@@ -117,8 +117,8 @@
 			this.labelChildrenDirect.Text = "<numC>";
 			this.checkBoxShowGlobalTransformation.Appearance = global::System.Windows.Forms.Appearance.Button;
 			this.checkBoxShowGlobalTransformation.AutoSize = true;
-			this.checkBoxShowGlobalTransformation.Checked = global::CoreSettings.CoreSettings.Default.ShowGlobalTrafo;
-			this.checkBoxShowGlobalTransformation.DataBindings.Add(new global::System.Windows.Forms.Binding("Checked", global::CoreSettings.CoreSettings.Default, "ShowGlobalTrafo", true, global::System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
+			this.checkBoxShowGlobalTransformation.Checked = global::open3mod.Properties.CoreSettings.Default.ShowGlobalTrafo;
+			this.checkBoxShowGlobalTransformation.DataBindings.Add(new global::System.Windows.Forms.Binding("Checked", global::open3mod.Properties.CoreSettings.Default, "ShowGlobalTrafo", true, global::System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
 			this.checkBoxShowGlobalTransformation.FlatStyle = global::System.Windows.Forms.FlatStyle.Flat;
 			this.checkBoxShowGlobalTransformation.Location = new global::System.Drawing.Point(218, 361);
 			this.checkBoxShowGlobalTransformation.Name = "checkBoxShowGlobalTransformation";
@@ -128,9 +128,9 @@
 			this.checkBoxShowGlobalTransformation.UseVisualStyleBackColor = true;
 			this.checkBoxShowGlobalTransformation.CheckedChanged += new global::System.EventHandler(this.OnToggleShowGlobalTrafo);
 			this.checkBoxShowAnimated.AutoSize = true;
-			this.checkBoxShowAnimated.Checked = global::CoreSettings.CoreSettings.Default.NodeInfoShowAnimatedTrafo;
+			this.checkBoxShowAnimated.Checked = global::open3mod.Properties.CoreSettings.Default.NodeInfoShowAnimatedTrafo;
 			this.checkBoxShowAnimated.CheckState = global::System.Windows.Forms.CheckState.Checked;
-			this.checkBoxShowAnimated.DataBindings.Add(new global::System.Windows.Forms.Binding("Checked", global::CoreSettings.CoreSettings.Default, "NodeInfoShowAnimatedTrafo", true, global::System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
+			this.checkBoxShowAnimated.DataBindings.Add(new global::System.Windows.Forms.Binding("Checked", global::open3mod.Properties.CoreSettings.Default, "NodeInfoShowAnimatedTrafo", true, global::System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
 			this.checkBoxShowAnimated.Location = new global::System.Drawing.Point(247, 114);
 			this.checkBoxShowAnimated.Name = "checkBoxShowAnimated";
 			this.checkBoxShowAnimated.Size = new global::System.Drawing.Size(133, 17);

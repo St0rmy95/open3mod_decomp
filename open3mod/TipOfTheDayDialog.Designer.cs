@@ -49,8 +49,8 @@
 			this.buttonOk.Text = "OK";
 			this.buttonOk.UseVisualStyleBackColor = true;
 			this.checkBoxDoNotShowAgain.AutoSize = true;
-			this.checkBoxDoNotShowAgain.Checked = global::CoreSettings.CoreSettings.Default.ShowTipsOnStartup;
-			this.checkBoxDoNotShowAgain.DataBindings.Add(new global::System.Windows.Forms.Binding("Checked", global::CoreSettings.CoreSettings.Default, "ShowTipsOnStartup", true, global::System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
+			this.checkBoxDoNotShowAgain.Checked = global::open3mod.Properties.CoreSettings.Default.ShowTipsOnStartup;
+			this.checkBoxDoNotShowAgain.DataBindings.Add(new global::System.Windows.Forms.Binding("Checked", global::open3mod.Properties.CoreSettings.Default, "ShowTipsOnStartup", true, global::System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
 			this.checkBoxDoNotShowAgain.Location = new global::System.Drawing.Point(321, 227);
 			this.checkBoxDoNotShowAgain.Name = "checkBoxDoNotShowAgain";
 			this.checkBoxDoNotShowAgain.Size = new global::System.Drawing.Size(103, 17);

@@ -2,7 +2,6 @@
 using System.Drawing;
 using System.Drawing.Imaging;
 using System.IO;
-using CoreSettings;
 using DevIL;
 using DevIL.Unmanaged;
 
@@ -106,7 +105,7 @@ namespace open3mod
 					}
 					catch (IOException)
 					{
-						foreach (string path in CoreSettings.Default.AdditionalTextureFolders)
+						foreach (string path in Properties.CoreSettings.Default.AdditionalTextureFolders)
 						{
 							try
 							{

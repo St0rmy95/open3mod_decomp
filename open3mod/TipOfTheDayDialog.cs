@@ -2,7 +2,6 @@
 using System.ComponentModel;
 using System.Drawing;
 using System.Windows.Forms;
-using CoreSettings;
 
 namespace open3mod
 {
@@ -13,7 +12,7 @@ namespace open3mod
 		public TipOfTheDayDialog()
 		{
 			this.InitializeComponent();
-			this.SetTip(CoreSettings.Default.NextTip);
+			this.SetTip(Properties.CoreSettings.Default.NextTip);
 		}
 
 		// Token: 0x060003AB RID: 939 RVA: 0x0001E3E4 File Offset: 0x0001C5E4
@@ -43,13 +42,13 @@ namespace open3mod
 		// Token: 0x060003AE RID: 942 RVA: 0x0001E472 File Offset: 0x0001C672
 		private void OnClose(object sender, FormClosingEventArgs e)
 		{
-			CoreSettings.Default.NextTip = (this._cursor + 1) % TipOfTheDayDialog._tips.Length;
+			Properties.CoreSettings.Default.NextTip = (this._cursor + 1) % TipOfTheDayDialog._tips.Length;
 		}
 
 		// Token: 0x060003AF RID: 943 RVA: 0x0001E48E File Offset: 0x0001C68E
 		private void OnChangeStartup(object sender, EventArgs e)
 		{
-			CoreSettings.Default.ShowTipsOnStartup = this.checkBoxDoNotShowAgain.Checked;
+			Properties.CoreSettings.Default.ShowTipsOnStartup = this.checkBoxDoNotShowAgain.Checked;
 		}
 
 		// Token: 0x040002EB RID: 747

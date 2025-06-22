@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using System.Drawing;
 using System.Linq;
-using CoreSettings;
 
 namespace open3mod
 {
@@ -16,11 +15,11 @@ namespace open3mod
 		{
 			get
 			{
-				return CoreSettings.Default.RenderWireframe;
+				return Properties.CoreSettings.Default.RenderWireframe;
 			}
 			set
 			{
-				CoreSettings.Default.RenderWireframe = value;
+				Properties.CoreSettings.Default.RenderWireframe = value;
 			}
 		}
 
@@ -31,11 +30,11 @@ namespace open3mod
 		{
 			get
 			{
-				return CoreSettings.Default.RenderTextured;
+				return Properties.CoreSettings.Default.RenderTextured;
 			}
 			set
 			{
-				CoreSettings.Default.RenderTextured = value;
+				Properties.CoreSettings.Default.RenderTextured = value;
 			}
 		}
 
@@ -46,11 +45,11 @@ namespace open3mod
 		{
 			get
 			{
-				return CoreSettings.Default.RenderLit;
+				return Properties.CoreSettings.Default.RenderLit;
 			}
 			set
 			{
-				CoreSettings.Default.RenderLit = value;
+				Properties.CoreSettings.Default.RenderLit = value;
 			}
 		}
 
@@ -61,11 +60,11 @@ namespace open3mod
 		{
 			get
 			{
-				return CoreSettings.Default.ShowFps;
+				return Properties.CoreSettings.Default.ShowFps;
 			}
 			set
 			{
-				CoreSettings.Default.ShowFps = value;
+				Properties.CoreSettings.Default.ShowFps = value;
 			}
 		}
 
@@ -76,11 +75,11 @@ namespace open3mod
 		{
 			get
 			{
-				return CoreSettings.Default.ShowBBs;
+				return Properties.CoreSettings.Default.ShowBBs;
 			}
 			set
 			{
-				CoreSettings.Default.ShowBBs = value;
+				Properties.CoreSettings.Default.ShowBBs = value;
 			}
 		}
 
@@ -91,11 +90,11 @@ namespace open3mod
 		{
 			get
 			{
-				return CoreSettings.Default.ShowNormals;
+				return Properties.CoreSettings.Default.ShowNormals;
 			}
 			set
 			{
-				CoreSettings.Default.ShowNormals = value;
+				Properties.CoreSettings.Default.ShowNormals = value;
 			}
 		}
 
@@ -106,11 +105,11 @@ namespace open3mod
 		{
 			get
 			{
-				return CoreSettings.Default.ShowSkeleton;
+				return Properties.CoreSettings.Default.ShowSkeleton;
 			}
 			set
 			{
-				CoreSettings.Default.ShowSkeleton = value;
+				Properties.CoreSettings.Default.ShowSkeleton = value;
 			}
 		}
 

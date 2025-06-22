@@ -8,7 +8,7 @@ namespace open3mod
 	internal class RenderControl : GLControl
 	{
 		// Token: 0x0600024E RID: 590 RVA: 0x00013A1F File Offset: 0x00011C1F
-		public RenderControl() : base(new GraphicsMode(new ColorFormat(32), 24, 8, RenderControl.GetSampleCount(GraphicsSettings.Default.MultiSampling)))
+		public RenderControl() : base(new GraphicsMode(new ColorFormat(32), 24, 8, RenderControl.GetSampleCount(Properties.GraphicsSettings.Default.MultiSampling)))
 		{
 		}
 

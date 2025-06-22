@@ -62,13 +62,15 @@
     <Compile Include="About.Designer.cs">
       <DependentUpon>About.cs</DependentUpon>
     </Compile>
-    <Compile Include="AnimationInspectionView.cs" />
+    <Compile Include="AnimationInspectionView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
     <Compile Include="AnimEvaluator.cs" />
     <Compile Include="AssimpToOpenTk.cs" />
     <Compile Include="BoneByVertexMap.cs" />
     <Compile Include="CameraMode.cs" />
-    <Compile Include="CoreSettings\CoreSettings.cs" />
-    <Compile Include="CoreSettings\CoreSettings.Designer.cs">
+    <Compile Include="Properties\CoreSettings.cs" />
+    <Compile Include="Properties\CoreSettings.Designer.cs">
       <DependentUpon>CoreSettings.settings</DependentUpon>
       <AutoGen>True</AutoGen>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
@@ -88,24 +90,30 @@
     <Compile Include="ExportDialog.Designer.cs">
       <DependentUpon>ExportDialog.cs</DependentUpon>
     </Compile>
-    <Compile Include="ExportSettings.Designer.cs">
+    <Compile Include="Properties\ExportSettings.Designer.cs">
       <DependentUpon>ExportSettings.settings</DependentUpon>
       <AutoGen>True</AutoGen>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
     <Compile Include="FileAssociations.cs" />
-    <Compile Include="FolderSetDisplay.cs" />
+    <Compile Include="FolderSetDisplay.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
     <Compile Include="FpsCameraController.cs" />
     <Compile Include="FpsTracker.cs" />
-    <Compile Include="GraphicsSettings.Designer.cs">
+    <Compile Include="Properties\GraphicsSettings.Designer.cs">
       <DependentUpon>GraphicsSettings.settings</DependentUpon>
       <AutoGen>True</AutoGen>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
-    <Compile Include="HierarchyInspectionView.cs" />
+    <Compile Include="HierarchyInspectionView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
     <Compile Include="ICameraController.cs" />
     <Compile Include="ImageFromResource.cs" />
-    <Compile Include="InspectionView.cs" />
+    <Compile Include="InspectionView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
     <Compile Include="ISceneRenderer.cs" />
     <Compile Include="LogPipe.cs" />
     <Compile Include="LogStore.cs" />
@@ -126,15 +134,21 @@
     <Compile Include="MaterialMapperClassicGl.cs" />
     <Compile Include="MaterialMapperModernGl.cs" />
     <Compile Include="MaterialPreviewRenderer.cs" />
-    <Compile Include="MaterialThumbnailControl.cs" />
+    <Compile Include="MaterialThumbnailControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
     <Compile Include="MeshDetailsDialog.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="MeshDetailsDialog.Designer.cs">
       <DependentUpon>MeshDetailsDialog.cs</DependentUpon>
     </Compile>
-    <Compile Include="MeshInfoPopup.cs" />
-    <Compile Include="NodeInfoPopup.cs" />
+    <Compile Include="MeshInfoPopup.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="NodeInfoPopup.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
     <Compile Include="NodeItemsDialog.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -152,7 +166,9 @@
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Properties\Resources.cs" />
-    <Compile Include="RenderControl.cs" />
+    <Compile Include="RenderControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
     <Compile Include="Renderer.cs" />
     <Compile Include="RenderFlags.cs" />
     <Compile Include="RenderMesh.cs" />
@@ -173,7 +189,9 @@
     <Compile Include="ShaderGen.cs" />
     <Compile Include="SphereGeometry.cs" />
     <Compile Include="Tab.cs" />
-    <Compile Include="TabUiSkeleton.cs" />
+    <Compile Include="TabUiSkeleton.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
     <Compile Include="TextOverlay.cs" />
     <Compile Include="Texture.cs" />
     <Compile Include="TextureDetailsDialog.cs">
@@ -187,17 +205,25 @@
     <Compile Include="TextureLoader.cs" />
     <Compile Include="TextureQueue.cs" />
     <Compile Include="TextureSet.cs" />
-    <Compile Include="TextureThumbnailControl.cs" />
-    <Compile Include="ThumbnailControlBase.cs" />
+    <Compile Include="TextureThumbnailControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ThumbnailControlBase.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
     <Compile Include="ThumbnailViewBase.cs" />
-    <Compile Include="TimeSlideControl.cs" />
+    <Compile Include="TimeSlideControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
     <Compile Include="TipOfTheDayDialog.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="TipOfTheDayDialog.Designer.cs">
       <DependentUpon>TipOfTheDayDialog.cs</DependentUpon>
     </Compile>
-    <Compile Include="TrafoMatrixViewControl.cs" />
+    <Compile Include="TrafoMatrixViewControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
     <Compile Include="UiState.cs" />
     <Compile Include="Viewport.cs" />
   </ItemGroup>
@@ -259,15 +285,15 @@
   <ItemGroup>
     <None Include="app.config" />
     <None Include="app.manifest" />
-    <None Include="CoreSettings\CoreSettings.settings">
+    <None Include="Properties\CoreSettings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>CoreSettings.Designer.cs</LastGenOutput>
     </None>
-    <None Include="ExportSettings.settings">
+    <None Include="Properties\ExportSettings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>ExportSettings.Designer.cs</LastGenOutput>
     </None>
-    <None Include="GraphicsSettings.settings">
+    <None Include="Properties\GraphicsSettings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>GraphicsSettings.Designer.cs</LastGenOutput>
     </None>

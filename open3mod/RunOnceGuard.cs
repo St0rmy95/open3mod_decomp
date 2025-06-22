@@ -22,7 +22,7 @@ namespace open3mod
 		{
 			string pipeName = mutexName + "_pipe";
 			bool flag;
-			using (new Mutex(true, mutexName, ref flag))
+			using (new Mutex(true, mutexName, out flag))
 			{
 				if (flag)
 				{
@@ -68,12 +68,11 @@ namespace open3mod
 			// Token: 0x06000293 RID: 659 RVA: 0x00015B30 File Offset: 0x00013D30
 			public ServerRunner(string pipeName, Action<string> actionPrimaryReceiveMessage)
 			{
-				RunOnceGuard.ServerRunner <>4__this = this;
 				for (uint num = 0U; num < 2U; num += 1U)
 				{
 					this._threads[(int)((UIntPtr)num)] = new Thread(delegate()
 					{
-						while (!<>4__this._shutdown)
+						while (!this._shutdown)
 						{
 							try
 							{
@@ -82,7 +81,7 @@ namespace open3mod
 									AutoResetEvent connectEvent = new AutoResetEvent(false);
 									server.BeginWaitForConnection(delegate(IAsyncResult ar)
 									{
-										if (<>4__this._shutdown)
+										if (this._shutdown)
 										{
 											return;
 										}
@@ -90,7 +89,7 @@ namespace open3mod
 										using (StreamReader streamReader = new StreamReader(server))
 										{
 											string obj = streamReader.ReadLine();
-											if (!<>4__this._shutdown)
+											if (!this._shutdown)
 											{
 												actionPrimaryReceiveMessage(obj);
 											}

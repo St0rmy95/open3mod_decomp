@@ -45,10 +45,10 @@ namespace open3mod
 				{
 					this.comboBoxExportFormats.Items.Add(exportFormatDescription.Description + "  (" + exportFormatDescription.FileExtension + ")");
 				}
-				this.comboBoxExportFormats.SelectedIndex = ExportSettings.Default.ExportFormatIndex;
+				this.comboBoxExportFormats.SelectedIndex = Properties.ExportSettings.Default.ExportFormatIndex;
 				this.comboBoxExportFormats.SelectedIndexChanged += delegate(object s, EventArgs e)
 				{
-					ExportSettings.Default.ExportFormatIndex = this.comboBoxExportFormats.SelectedIndex;
+					Properties.ExportSettings.Default.ExportFormatIndex = this.comboBoxExportFormats.SelectedIndex;
 					this.UpdateFileName(true);
 				};
 			}
@@ -151,7 +151,7 @@ namespace open3mod
 			}
 			this.progressBarExport.Style = ProgressBarStyle.Marquee;
 			this.progressBarExport.MarqueeAnimationSpeed = 5;
-			Scene sourceScene = new Scene();
+			Assimp.Scene sourceScene = new Assimp.Scene();
 			sourceScene.Textures = scene.Raw.Textures;
 			sourceScene.SceneFlags = scene.Raw.SceneFlags;
 			sourceScene.RootNode = scene.Raw.RootNode;

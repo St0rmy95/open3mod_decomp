@@ -12,7 +12,6 @@ namespace open3mod
 		// Token: 0x06000209 RID: 521 RVA: 0x00011CE8 File Offset: 0x0000FEE8
 		protected ThumbnailControlBase(ThumbnailViewBase<TDeriving> owner, Image backgroundImage, string initialCaption)
 		{
-			ThumbnailControlBase<TDeriving> <>4__this = this;
 			this._owner = owner;
 			this.InitializeComponent();
 			this.labelOldTexture.Text = "";
@@ -39,7 +38,7 @@ namespace open3mod
 			}
 			base.MouseDown += delegate(object sender, MouseEventArgs args)
 			{
-				owner.SelectEntry((TDeriving)((object)<>4__this));
+				owner.SelectEntry((TDeriving)((object)this));
 			};
 			this.pictureBox.DoubleClick += delegate(object sender, EventArgs args)
 			{

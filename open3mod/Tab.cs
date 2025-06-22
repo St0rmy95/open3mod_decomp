@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Linq;
-using CoreSettings;
 using OpenTK;
 
 namespace open3mod
@@ -44,7 +43,7 @@ namespace open3mod
 			set
 			{
 				this._activeViewMode = value;
-				CoreSettings.Default.DefaultViewMode = (int)value;
+				Properties.CoreSettings.Default.DefaultViewMode = (int)value;
 				switch (this._activeViewMode)
 				{
 				case Tab.ViewMode.Single:
@@ -134,7 +133,7 @@ namespace open3mod
 		// Token: 0x06000310 RID: 784 RVA: 0x0001AE64 File Offset: 0x00019064
 		public Tab(object id, string fileBeingLoaded)
 		{
-			int defaultViewMode = CoreSettings.Default.DefaultViewMode;
+			int defaultViewMode = Properties.CoreSettings.Default.DefaultViewMode;
 			if (defaultViewMode <= 2 && defaultViewMode >= 0)
 			{
 				this.ActiveViewMode = (Tab.ViewMode)defaultViewMode;
@@ -142,7 +141,7 @@ namespace open3mod
 			else
 			{
 				this.ActiveViewMode = Tab.ViewMode.Four;
-				CoreSettings.Default.DefaultViewMode = 2;
+				Properties.CoreSettings.Default.DefaultViewMode = 2;
 			}
 			this.State = ((fileBeingLoaded == null) ? Tab.TabState.Empty : Tab.TabState.Loading);
 			this.File = fileBeingLoaded;

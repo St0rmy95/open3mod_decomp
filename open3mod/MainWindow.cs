@@ -10,7 +10,6 @@ using System.Linq;
 using System.Threading;
 using System.Windows.Forms;
 using Assimp;
-using CoreSettings;
 using OpenTK;
 
 namespace open3mod
@@ -137,7 +136,7 @@ namespace open3mod
 		// Token: 0x06000186 RID: 390 RVA: 0x0000D2BC File Offset: 0x0000B4BC
 		private static void MaybeShowTipOfTheDay()
 		{
-			if (CoreSettings.Default.ShowTipsOnStartup)
+			if (Properties.CoreSettings.Default.ShowTipsOnStartup)
 			{
 				TipOfTheDayDialog tipOfTheDayDialog = new TipOfTheDayDialog();
 				tipOfTheDayDialog.ShowDialog();
@@ -162,13 +161,13 @@ namespace open3mod
 		// Token: 0x06000188 RID: 392 RVA: 0x0000D370 File Offset: 0x0000B570
 		private static void MaybeShowDonationDialog()
 		{
-			if (CoreSettings.Default.DonationUseCountDown == 0)
+			if (Properties.CoreSettings.Default.DonationUseCountDown == 0)
 			{
-				CoreSettings.Default.DonationUseCountDown = 10;
+				Properties.CoreSettings.Default.DonationUseCountDown = 10;
 			}
-			if (CoreSettings.Default.DonationUseCountDown != -1 && --CoreSettings.Default.DonationUseCountDown == 0)
+			if (Properties.CoreSettings.Default.DonationUseCountDown != -1 && --Properties.CoreSettings.Default.DonationUseCountDown == 0)
 			{
-				CoreSettings.Default.DonationUseCountDown = 10;
+				Properties.CoreSettings.Default.DonationUseCountDown = 10;
 				DonationDialog donationDialog = new DonationDialog();
 				donationDialog.ShowDialog();
 			}
@@ -257,11 +256,11 @@ namespace open3mod
 		private void InitRecentList()
 		{
 			this.recentToolStripMenuItem.DropDownItems.Clear();
-			StringCollection stringCollection = CoreSettings.Default.RecentFiles;
+			StringCollection stringCollection = Properties.CoreSettings.Default.RecentFiles;
 			if (stringCollection == null)
 			{
-				stringCollection = (CoreSettings.Default.RecentFiles = new StringCollection());
-				CoreSettings.Default.Save();
+				stringCollection = (Properties.CoreSettings.Default.RecentFiles = new StringCollection());
+				Properties.CoreSettings.Default.Save();
 			}
 			foreach (string path2 in stringCollection)
 			{
@@ -277,7 +276,7 @@ namespace open3mod
 		// Token: 0x0600018D RID: 397 RVA: 0x0000D748 File Offset: 0x0000B948
 		private void AddRecentItem(string file)
 		{
-			StringCollection recentFiles = CoreSettings.Default.RecentFiles;
+			StringCollection recentFiles = Properties.CoreSettings.Default.RecentFiles;
 			bool flag = false;
 			int num = 0;
 			foreach (string text in recentFiles)
@@ -296,7 +295,7 @@ namespace open3mod
 				recentFiles.RemoveAt(recentFiles.Count - 1);
 			}
 			recentFiles.Insert(0, file);
-			CoreSettings.Default.Save();
+			Properties.CoreSettings.Default.Save();
 			this.recentToolStripMenuItem.DropDownItems.Insert(0, new ToolStripMenuItem(Path.GetFileName(file), null, delegate(object sender, EventArgs args)
 			{
 				this.AddTab(file, true, true);
@@ -343,7 +342,7 @@ namespace open3mod
 		{
 			if (this.tabControl1.TabCount == 1)
 			{
-				if (CoreSettings.Default.ExitOnTabClosing)
+				if (Properties.CoreSettings.Default.ExitOnTabClosing)
 				{
 					Application.Exit();
 					return;
@@ -407,7 +406,7 @@ namespace open3mod
 			try
 			{
 				tab.ActiveScene = new Scene(tab.File);
-				CoreSettings.Default.CountFilesOpened++;
+				Properties.CoreSettings.Default.CountFilesOpened++;
 			}
 			catch (Exception ex)
 			{
@@ -837,17 +836,17 @@ namespace open3mod
 		// Token: 0x060001B6 RID: 438 RVA: 0x0000E5E4 File Offset: 0x0000C7E4
 		private void OnLoad(object sender, EventArgs e)
 		{
-			if (CoreSettings.Default.Maximized)
+			if (Properties.CoreSettings.Default.Maximized)
 			{
 				base.WindowState = FormWindowState.Maximized;
-				base.Location = CoreSettings.Default.Location;
-				base.Size = CoreSettings.Default.Size;
+				base.Location = Properties.CoreSettings.Default.Location;
+				base.Size = Properties.CoreSettings.Default.Size;
 				return;
 			}
-			Size size = CoreSettings.Default.Size;
+			Size size = Properties.CoreSettings.Default.Size;
 			if (size.Width != 0)
 			{
-				base.Location = CoreSettings.Default.Location;
+				base.Location = Properties.CoreSettings.Default.Location;
 				base.Size = size;
 			}
 		}
@@ -857,17 +856,17 @@ namespace open3mod
 		{
 			if (base.WindowState == FormWindowState.Maximized)
 			{
-				CoreSettings.Default.Location = base.RestoreBounds.Location;
-				CoreSettings.Default.Size = base.RestoreBounds.Size;
-				CoreSettings.Default.Maximized = true;
+				Properties.CoreSettings.Default.Location = base.RestoreBounds.Location;
+				Properties.CoreSettings.Default.Size = base.RestoreBounds.Size;
+				Properties.CoreSettings.Default.Maximized = true;
 			}
 			else
 			{
-				CoreSettings.Default.Location = base.Location;
-				CoreSettings.Default.Size = base.Size;
-				CoreSettings.Default.Maximized = false;
+				Properties.CoreSettings.Default.Location = base.Location;
+				Properties.CoreSettings.Default.Size = base.Size;
+				Properties.CoreSettings.Default.Maximized = false;
 			}
-			CoreSettings.Default.Save();
+			Properties.CoreSettings.Default.Save();
 		}
 
 		// Token: 0x060001B8 RID: 440 RVA: 0x0000E6D8 File Offset: 0x0000C8D8

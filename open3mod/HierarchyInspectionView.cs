@@ -363,7 +363,7 @@ namespace open3mod
 		// Token: 0x06000126 RID: 294 RVA: 0x0000A43C File Offset: 0x0000863C
 		private void AnimatePopup(int targetLocY)
 		{
-			Control control = this.nodeInfoPopup.Visible ? this.nodeInfoPopup : this.meshInfoPopup;
+			Control control = this.nodeInfoPopup.Visible ? (Control)this.nodeInfoPopup : (Control)this.meshInfoPopup;
 			this._targetLocY = targetLocY;
 			this._oldLocY = control.Location.Y;
 			this._popupAnimFramesRemaining = 5;
@@ -375,7 +375,7 @@ namespace open3mod
 				};
 				this._popupAnimTimer.Tick += delegate(object sender, EventArgs args)
 				{
-					Control control2 = this.nodeInfoPopup.Visible ? this.nodeInfoPopup : this.meshInfoPopup;
+					Control control2 = this.nodeInfoPopup.Visible ? (Control)this.nodeInfoPopup : (Control)this.meshInfoPopup;
 					this._popupAnimFramesRemaining--;
 					Point location = control2.Location;
 					location.Y = this._targetLocY - (int)((double)(this._targetLocY - this._oldLocY) * ((double)this._popupAnimFramesRemaining / 5.0));

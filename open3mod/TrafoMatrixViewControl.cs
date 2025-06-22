@@ -4,7 +4,6 @@ using System.Drawing;
 using System.Linq;
 using System.Windows.Forms;
 using Assimp;
-using CoreSettings;
 using OpenTK;
 
 namespace open3mod
@@ -16,7 +15,7 @@ namespace open3mod
 		public TrafoMatrixViewControl()
 		{
 			this.InitializeComponent();
-			this.comboBoxRotMode.SelectedIndex = ((CoreSettings.Default.DefaultRotationMode < this.comboBoxRotMode.Items.Count) ? CoreSettings.Default.DefaultRotationMode : 0);
+			this.comboBoxRotMode.SelectedIndex = ((Properties.CoreSettings.Default.DefaultRotationMode < this.comboBoxRotMode.Items.Count) ? Properties.CoreSettings.Default.DefaultRotationMode : 0);
 			foreach (Control control in base.Controls.OfType<Control>())
 			{
 				control.BackColor = control.BackColor;
@@ -47,7 +46,7 @@ namespace open3mod
 		// Token: 0x060003B7 RID: 951 RVA: 0x0001EB03 File Offset: 0x0001CD03
 		private void OnUpdateRotation(object sender, EventArgs e)
 		{
-			CoreSettings.Default.DefaultRotationMode = this.comboBoxRotMode.SelectedIndex;
+			Properties.CoreSettings.Default.DefaultRotationMode = this.comboBoxRotMode.SelectedIndex;
 			this.SetRotation(this._isInDiffView);
 		}
 

@@ -524,14 +524,14 @@
 			this.linkLabelWebsite.LinkClicked += new global::System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabelWebsite_LinkClicked);
 			this.trackBarBrightness.Anchor = (global::System.Windows.Forms.AnchorStyles.Bottom | global::System.Windows.Forms.AnchorStyles.Right);
 			this.trackBarBrightness.BackColor = global::System.Drawing.SystemColors.ActiveBorder;
-			this.trackBarBrightness.DataBindings.Add(new global::System.Windows.Forms.Binding("Value", global::open3mod.GraphicsSettings.Default, "OutputBrightness", true, global::System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
+			this.trackBarBrightness.DataBindings.Add(new global::System.Windows.Forms.Binding("Value", global::open3mod.Properties.GraphicsSettings.Default, "OutputBrightness", true, global::System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
 			this.trackBarBrightness.Location = new global::System.Drawing.Point(863, 713);
 			this.trackBarBrightness.Margin = new global::System.Windows.Forms.Padding(0);
 			this.trackBarBrightness.Maximum = 100;
 			this.trackBarBrightness.Name = "trackBarBrightness";
 			this.trackBarBrightness.Size = new global::System.Drawing.Size(188, 45);
 			this.trackBarBrightness.TabIndex = 6;
-			this.trackBarBrightness.Value = global::open3mod.GraphicsSettings.Default.OutputBrightness;
+			this.trackBarBrightness.Value = global::open3mod.Properties.GraphicsSettings.Default.OutputBrightness;
 			this.glControl1.AllowDrop = true;
 			this.glControl1.Anchor = (global::System.Windows.Forms.AnchorStyles.Top | global::System.Windows.Forms.AnchorStyles.Bottom | global::System.Windows.Forms.AnchorStyles.Left | global::System.Windows.Forms.AnchorStyles.Right);
 			this.glControl1.BackColor = global::System.Drawing.Color.Black;

@@ -2,7 +2,6 @@
 using System.ComponentModel;
 using System.Drawing;
 using System.Windows.Forms;
-using CoreSettings;
 using OpenTK;
 
 namespace open3mod
@@ -69,7 +68,7 @@ namespace open3mod
 			this.splitContainer.SuspendLayout();
 			base.SuspendLayout();
 			this.splitContainer.Anchor = (AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right);
-			this.splitContainer.DataBindings.Add(new Binding("SplitterDistance", CoreSettings.Default, "InspectorSplitterPos", true, DataSourceUpdateMode.OnPropertyChanged));
+			this.splitContainer.DataBindings.Add(new Binding("SplitterDistance", Properties.CoreSettings.Default, "InspectorSplitterPos", true, DataSourceUpdateMode.OnPropertyChanged));
 			this.splitContainer.FixedPanel = FixedPanel.Panel2;
 			this.splitContainer.Location = new Point(0, 0);
 			this.splitContainer.Name = "splitContainer";

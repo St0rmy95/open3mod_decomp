@@ -68,27 +68,27 @@ namespace open3mod
 				{
 					ushort[] array2 = array;
 					ushort num3 = num2;
-					num2 = num3 + 1;
+					num2 = num3++;
 					array2[(int)num3] = (ushort)(b * segments + b2);
 					ushort[] array3 = array;
 					ushort num4 = num2;
-					num2 = num4 + 1;
+					num2 = num4++;
 					array3[(int)num4] = (ushort)((b + 1) * segments + b2);
 					ushort[] array4 = array;
 					ushort num5 = num2;
-					num2 = num5 + 1;
+					num2 = num5++;
 					array4[(int)num5] = (ushort)((b + 1) * segments + b2 + 1);
 					ushort[] array5 = array;
 					ushort num6 = num2;
-					num2 = num6 + 1;
+					num2 = num6++;
 					array5[(int)num6] = (ushort)((b + 1) * segments + b2 + 1);
 					ushort[] array6 = array;
 					ushort num7 = num2;
-					num2 = num7 + 1;
+					num2 = num7++;
 					array6[(int)num7] = (ushort)(b * segments + b2 + 1);
 					ushort[] array7 = array;
 					ushort num8 = num2;
-					num2 = num8 + 1;
+					num2 = num8++;
 					array7[(int)num8] = (ushort)(b * segments + b2);
 				}
 			}

@@ -4,7 +4,6 @@ using System.Drawing;
 using System.Globalization;
 using System.Windows.Forms;
 using Assimp;
-using CoreSettings;
 using OpenTK;
 
 namespace open3mod

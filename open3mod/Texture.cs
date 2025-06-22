@@ -4,7 +4,6 @@ using System.Drawing.Drawing2D;
 using System.Drawing.Imaging;
 using System.Runtime.InteropServices;
 using Assimp;
-using CoreSettings;
 using OpenTK.Graphics.OpenGL;
 
 namespace open3mod
@@ -15,14 +14,13 @@ namespace open3mod
 		// Token: 0x06000330 RID: 816 RVA: 0x0001BA40 File Offset: 0x00019C40
 		public Texture(string file, string baseDir, Texture.CompletionCallback callback)
 		{
-			Texture <>4__this = this;
 			this._file = file;
 			this._baseDir = baseDir;
 			this._callback = delegate(string s, Image image, string actualLocation, TextureLoader.LoadResult status)
 			{
-				callback(<>4__this);
+				callback(this);
 			};
-			if (CoreSettings.Default.LoadTextures)
+			if (Properties.CoreSettings.Default.LoadTextures)
 			{
 				this.LoadAsync();
 				return;
@@ -33,14 +31,13 @@ namespace open3mod
 		// Token: 0x06000331 RID: 817 RVA: 0x0001BAD0 File Offset: 0x00019CD0
 		public Texture(EmbeddedTexture dataSource, string refName, Texture.CompletionCallback callback)
 		{
-			Texture <>4__this = this;
 			this._file = refName;
 			this._dataSource = dataSource;
 			this._callback = delegate(string s, Image image, string actualLocation, TextureLoader.LoadResult status)
 			{
-				callback(<>4__this);
+				callback(this);
 			};
-			if (CoreSettings.Default.LoadTextures)
+			if (Properties.CoreSettings.Default.LoadTextures)
 			{
 				this.LoadAsync();
 				return;
@@ -146,9 +143,9 @@ namespace open3mod
 						flag = true;
 					}
 					GL.GetError();
-					if (GraphicsSettings.Default.TexQualityBias > 0)
+					if (Properties.GraphicsSettings.Default.TexQualityBias > 0)
 					{
-						Bitmap bitmap2 = Texture.ApplyResolutionBias(bitmap, GraphicsSettings.Default.TexQualityBias);
+						Bitmap bitmap2 = Texture.ApplyResolutionBias(bitmap, Properties.GraphicsSettings.Default.TexQualityBias);
 						if (flag)
 						{
 							bitmap.Dispose();
@@ -197,7 +194,7 @@ namespace open3mod
 		// Token: 0x0600033C RID: 828 RVA: 0x0001BD48 File Offset: 0x00019F48
 		private void ConfigureFilters()
 		{
-			GraphicsSettings @default = GraphicsSettings.Default;
+			Properties.GraphicsSettings @default = Properties.GraphicsSettings.Default;
 			bool useMips = @default.UseMips;
 			switch (@default.TextureFilter)
 			{
@@ -283,15 +280,10 @@ namespace open3mod
 				{
 					Bitmap bitmap;
 					if (this._image is Bitmap)
-					{
 						bitmap = (Bitmap)this._image;
-					}
 					else
-					{
-						Image image = this._image;
-						bitmap = (this._image = new Bitmap(this._image));
-						image.Dispose();
-					}
+						bitmap = new Bitmap(this._image);
+
 					BitmapData bitmapData = bitmap.LockBits(new Rectangle(0, 0, bitmap.Width, bitmap.Height), ImageLockMode.ReadOnly, System.Drawing.Imaging.PixelFormat.Format32bppArgb);
 					this._alphaState = (Texture.LookForAlphaBits(bitmapData) ? Texture.AlphaState.HasAlpha : Texture.AlphaState.Opaque);
 					bitmap.UnlockBits(bitmapData);
