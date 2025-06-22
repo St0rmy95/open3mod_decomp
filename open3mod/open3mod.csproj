@@ -1,0 +1,276 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{1DF2965C-FB02-4727-96F4-DD64B33E5FD9}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>open3mod</RootNamespace>
+    <AssemblyName>open3mod</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ApplicationManifest>app.manifest</ApplicationManifest>
+    <ApplicationIcon>open3mod.ico</ApplicationIcon>
+    <StartupObject>open3mod.Program</StartupObject>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="AssimpNet">
+      <HintPath>..\..\..\..\..\Program Files (x86)\open3mod\Open 3D Model Viewer\AssimpNet.dll</HintPath>
+    </Reference>
+    <Reference Include="DevILNet">
+      <HintPath>..\..\..\..\..\Program Files (x86)\open3mod\Open 3D Model Viewer\DevILNet.dll</HintPath>
+    </Reference>
+    <Reference Include="OpenTK">
+      <HintPath>..\..\..\..\..\Program Files (x86)\open3mod\Open 3D Model Viewer\OpenTK.dll</HintPath>
+    </Reference>
+    <Reference Include="OpenTK.GLControl">
+      <HintPath>..\..\..\..\..\Program Files (x86)\open3mod\Open 3D Model Viewer\OpenTK.GLControl.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.DirectoryServices" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+  </ItemGroup>
+  <ItemGroup>
+    <AppDesigner Include="Properties\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="About.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="About.Designer.cs">
+      <DependentUpon>About.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AnimationInspectionView.cs" />
+    <Compile Include="AnimEvaluator.cs" />
+    <Compile Include="AssimpToOpenTk.cs" />
+    <Compile Include="BoneByVertexMap.cs" />
+    <Compile Include="CameraMode.cs" />
+    <Compile Include="CoreSettings\CoreSettings.cs" />
+    <Compile Include="CoreSettings\CoreSettings.Designer.cs">
+      <DependentUpon>CoreSettings.settings</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="CpuSkinningEvaluator.cs" />
+    <Compile Include="DonationDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DonationDialog.Designer.cs">
+      <DependentUpon>DonationDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="EmbeddedTextureLoader.cs" />
+    <Compile Include="EnumExtensionsNet4Backported.cs" />
+    <Compile Include="ExportDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ExportDialog.Designer.cs">
+      <DependentUpon>ExportDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ExportSettings.Designer.cs">
+      <DependentUpon>ExportSettings.settings</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="FileAssociations.cs" />
+    <Compile Include="FolderSetDisplay.cs" />
+    <Compile Include="FpsCameraController.cs" />
+    <Compile Include="FpsTracker.cs" />
+    <Compile Include="GraphicsSettings.Designer.cs">
+      <DependentUpon>GraphicsSettings.settings</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="HierarchyInspectionView.cs" />
+    <Compile Include="ICameraController.cs" />
+    <Compile Include="ImageFromResource.cs" />
+    <Compile Include="InspectionView.cs" />
+    <Compile Include="ISceneRenderer.cs" />
+    <Compile Include="LogPipe.cs" />
+    <Compile Include="LogStore.cs" />
+    <Compile Include="LogViewer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LogViewer.Designer.cs">
+      <DependentUpon>LogViewer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MainWindow.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MainWindow.Designer.cs">
+      <DependentUpon>MainWindow.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MaterialInspectionView.cs" />
+    <Compile Include="MaterialMapper.cs" />
+    <Compile Include="MaterialMapperClassicGl.cs" />
+    <Compile Include="MaterialMapperModernGl.cs" />
+    <Compile Include="MaterialPreviewRenderer.cs" />
+    <Compile Include="MaterialThumbnailControl.cs" />
+    <Compile Include="MeshDetailsDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MeshDetailsDialog.Designer.cs">
+      <DependentUpon>MeshDetailsDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MeshInfoPopup.cs" />
+    <Compile Include="NodeInfoPopup.cs" />
+    <Compile Include="NodeItemsDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="NodeItemsDialog.Designer.cs">
+      <DependentUpon>NodeItemsDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="NodePurpose.cs" />
+    <Compile Include="OpenTkToAssimp.cs" />
+    <Compile Include="OrbitCameraController.cs" />
+    <Compile Include="OverlayBoundingBox.cs" />
+    <Compile Include="OverlayLightSource.cs" />
+    <Compile Include="OverlayNormals.cs" />
+    <Compile Include="OverlaySkeleton.cs" />
+    <Compile Include="PickingCameraController.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resources.cs" />
+    <Compile Include="RenderControl.cs" />
+    <Compile Include="Renderer.cs" />
+    <Compile Include="RenderFlags.cs" />
+    <Compile Include="RenderMesh.cs" />
+    <Compile Include="RoundedRectangle.cs" />
+    <Compile Include="RunOnceGuard.cs" />
+    <Compile Include="Scene.cs" />
+    <Compile Include="SceneAnimator.cs" />
+    <Compile Include="SceneRendererClassicGl.cs" />
+    <Compile Include="SceneRendererModernGl.cs" />
+    <Compile Include="SceneRendererShared.cs" />
+    <Compile Include="SettingsDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SettingsDialog.Designer.cs">
+      <DependentUpon>SettingsDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Shader.cs" />
+    <Compile Include="ShaderGen.cs" />
+    <Compile Include="SphereGeometry.cs" />
+    <Compile Include="Tab.cs" />
+    <Compile Include="TabUiSkeleton.cs" />
+    <Compile Include="TextOverlay.cs" />
+    <Compile Include="Texture.cs" />
+    <Compile Include="TextureDetailsDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TextureDetailsDialog.Designer.cs">
+      <DependentUpon>TextureDetailsDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TextureExporter.cs" />
+    <Compile Include="TextureInspectionView.cs" />
+    <Compile Include="TextureLoader.cs" />
+    <Compile Include="TextureQueue.cs" />
+    <Compile Include="TextureSet.cs" />
+    <Compile Include="TextureThumbnailControl.cs" />
+    <Compile Include="ThumbnailControlBase.cs" />
+    <Compile Include="ThumbnailViewBase.cs" />
+    <Compile Include="TimeSlideControl.cs" />
+    <Compile Include="TipOfTheDayDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TipOfTheDayDialog.Designer.cs">
+      <DependentUpon>TipOfTheDayDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TrafoMatrixViewControl.cs" />
+    <Compile Include="UiState.cs" />
+    <Compile Include="Viewport.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="About.resources" />
+    <EmbeddedResource Include="AnimationInspectionView.resources" />
+    <EmbeddedResource Include="DonationDialog.resources" />
+    <EmbeddedResource Include="ExportDialog.resources" />
+    <EmbeddedResource Include="FolderSetDisplay.resources" />
+    <EmbeddedResource Include="HierarchyInspectionView.resources" />
+    <EmbeddedResource Include="Images\FailedToLoad.png" />
+    <EmbeddedResource Include="Images\HUDBar.png" />
+    <EmbeddedResource Include="Images\HUD_FPS_Hover.png" />
+    <EmbeddedResource Include="Images\HUD_FPS_Normal.png" />
+    <EmbeddedResource Include="Images\HUD_FPS_Selected.png" />
+    <EmbeddedResource Include="Images\HUD_Orbit_Hover.png" />
+    <EmbeddedResource Include="Images\HUD_Orbit_Normal.png" />
+    <EmbeddedResource Include="Images\HUD_Orbit_Selected.png" />
+    <EmbeddedResource Include="Images\HUD_Picking_Hover.png" />
+    <EmbeddedResource Include="Images\HUD_Picking_Normal.png" />
+    <EmbeddedResource Include="Images\HUD_Picking_Selected.png" />
+    <EmbeddedResource Include="Images\HUD_X_Hover.png" />
+    <EmbeddedResource Include="Images\HUD_X_Normal.png" />
+    <EmbeddedResource Include="Images\HUD_X_Selected.png" />
+    <EmbeddedResource Include="Images\HUD_Y_Hover.png" />
+    <EmbeddedResource Include="Images\HUD_Y_Normal.png" />
+    <EmbeddedResource Include="Images\HUD_Y_Selected.png" />
+    <EmbeddedResource Include="Images\HUD_Z_Hover.png" />
+    <EmbeddedResource Include="Images\HUD_Z_Normal.png" />
+    <EmbeddedResource Include="Images\HUD_Z_Selected.png" />
+    <EmbeddedResource Include="Images\PlayAnim.png" />
+    <EmbeddedResource Include="Images\StopAnim.png" />
+    <EmbeddedResource Include="Images\TextureLoading.gif" />
+    <EmbeddedResource Include="Images\TextureTransparentBackground.png" />
+    <EmbeddedResource Include="Images\TipOfTheDay\Tip0.png" />
+    <EmbeddedResource Include="Images\TipOfTheDay\Tip1.png" />
+    <EmbeddedResource Include="Images\TipOfTheDay\Tip2.png" />
+    <EmbeddedResource Include="Images\TipOfTheDay\Tip3.png" />
+    <EmbeddedResource Include="Images\TipOfTheDay\Tip4.png" />
+    <EmbeddedResource Include="Images\TipOfTheDay\Tip5.png" />
+    <EmbeddedResource Include="InspectionView.resources" />
+    <EmbeddedResource Include="LogViewer.resources" />
+    <EmbeddedResource Include="MainWindow.resources" />
+    <EmbeddedResource Include="MeshDetailsDialog.resources" />
+    <EmbeddedResource Include="MeshInfoPopup.resources" />
+    <EmbeddedResource Include="NodeInfoPopup.resources" />
+    <EmbeddedResource Include="NodeItemsDialog.resources" />
+    <EmbeddedResource Include="Properties\Resources.resources" />
+    <EmbeddedResource Include="SettingsDialog.resources" />
+    <EmbeddedResource Include="Shader\UberFragmentShader.glsl" />
+    <EmbeddedResource Include="Shader\UberVertexShader.glsl" />
+    <EmbeddedResource Include="TabUiSkeleton.resources" />
+    <EmbeddedResource Include="TextureDetailsDialog.resources" />
+    <EmbeddedResource Include="ThumbnailControlBase.resources" />
+    <EmbeddedResource Include="TimeSlideControl.resources" />
+    <EmbeddedResource Include="TipOfTheDayDialog.resources" />
+    <EmbeddedResource Include="TrafoMatrixViewControl.resources" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="app.manifest" />
+    <None Include="CoreSettings\CoreSettings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>CoreSettings.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="ExportSettings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>ExportSettings.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="GraphicsSettings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>GraphicsSettings.Designer.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
