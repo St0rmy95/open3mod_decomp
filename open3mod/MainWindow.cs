@@ -917,31 +917,31 @@ namespace open3mod
 		// Token: 0x060001BC RID: 444 RVA: 0x0000E7ED File Offset: 0x0000C9ED
 		private void wusonToolStripMenuItem_Click(object sender, EventArgs e)
 		{
-			this.AddTab(File.Exists("../../../testdata/scenes/spider.obj") ? "../../../testdata/scenes/spider.obj" : "testscenes/spider/spider.obj", true, true);
+			this.AddTab(File.Exists("../../../testdata/scenes/spider.obj") ? "../../../testdata/scenes/spider.obj" : "SampleScenes/spider/spider.obj", true, true);
 		}
 
 		// Token: 0x060001BD RID: 445 RVA: 0x0000E80F File Offset: 0x0000CA0F
 		private void jeepToolStripMenuItem_Click(object sender, EventArgs e)
 		{
-			this.AddTab(File.Exists("../../../testdata/redist/jeep/jeep1.ms3d") ? "../../../testdata/redist/jeep/jeep1.ms3d" : "testscenes/jeep/jeep1.ms3d", true, true);
+			this.AddTab(File.Exists("../../../testdata/redist/jeep/jeep1.ms3d") ? "../../../testdata/redist/jeep/jeep1.ms3d" : "SampleScenes/jeep/jeep1.ms3d", true, true);
 		}
 
 		// Token: 0x060001BE RID: 446 RVA: 0x0000E831 File Offset: 0x0000CA31
 		private void duckToolStripMenuItem_Click(object sender, EventArgs e)
 		{
-			this.AddTab(File.Exists("../../../testdata/redist/duck/duck.dae") ? "../../../testdata/redist/duck/duck.dae" : "testscenes/duck/duck.dae", true, true);
+			this.AddTab(File.Exists("../../../testdata/redist/duck/duck.dae") ? "../../../testdata/redist/duck/duck.dae" : "SampleScenes/duck/duck.dae", true, true);
 		}
 
 		// Token: 0x060001BF RID: 447 RVA: 0x0000E853 File Offset: 0x0000CA53
 		private void wustonAnimatedToolStripMenuItem_Click(object sender, EventArgs e)
 		{
-			this.AddTab(File.Exists("../../../testdata/scenes/Testwuson.X") ? "../../../testdata/scenes/Testwuson.X" : "testscenes/wuson/Testwuson.X", true, true);
+			this.AddTab(File.Exists("../../../testdata/scenes/Testwuson.X") ? "../../../testdata/scenes/Testwuson.X" : "SampleScenes/wuson/Testwuson.X", true, true);
 		}
 
 		// Token: 0x060001C0 RID: 448 RVA: 0x0000E875 File Offset: 0x0000CA75
 		private void lostEmpireToolStripMenuItem_Click(object sender, EventArgs e)
 		{
-			this.AddTab(File.Exists("../../../testdata/redist/lost-empire/lost_empire.obj") ? "../../../testdata/redist/lost-empire/lost_empire.obj" : "testscenes/lost-empire/lost_empire.obj", true, true);
+			this.AddTab(File.Exists("../../../testdata/redist/lost-empire/lost_empire.obj") ? "../../../testdata/redist/lost-empire/lost_empire.obj" : "SampleScenes/lost-empire/lost_empire.obj", true, true);
 		}
 
 		// Token: 0x060001C3 RID: 451 RVA: 0x00010BC0 File Offset: 0x0000EDC0
