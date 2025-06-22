@@ -63,6 +63,7 @@ namespace open3mod
 							IL.CopyPixels(0, 0, 0, imageInfo.Width, imageInfo.Height, 1, DataFormat.BGRA, DataType.UnsignedByte, bitmapData.Scan0);
 							bitmap.UnlockBits(bitmapData);
 							this._image = bitmap;
+							this._image.RotateFlip(RotateFlipType.RotateNoneFlipY);
 							this._result = TextureLoader.LoadResult.Good;
 						}
 					}
