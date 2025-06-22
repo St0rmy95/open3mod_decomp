@@ -65,24 +65,24 @@
     <Compile Include="AnimationInspectionView.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="AnimEvaluator.cs" />
-    <Compile Include="AssimpToOpenTk.cs" />
-    <Compile Include="BoneByVertexMap.cs" />
-    <Compile Include="CameraMode.cs" />
+    <Compile Include="Rendering\Animation\AnimEvaluator.cs" />
+    <Compile Include="IO\AssimpToOpenTk.cs" />
+    <Compile Include="Rendering\Mesh\BoneByVertexMap.cs" />
+    <Compile Include="Rendering\Scene\CameraMode.cs" />
     <Compile Include="Properties\CoreSettings.cs" />
     <Compile Include="Properties\CoreSettings.Designer.cs">
       <DependentUpon>CoreSettings.settings</DependentUpon>
       <AutoGen>True</AutoGen>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
-    <Compile Include="CpuSkinningEvaluator.cs" />
+    <Compile Include="Rendering\Mesh\CpuSkinningEvaluator.cs" />
     <Compile Include="DonationDialog.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="DonationDialog.Designer.cs">
       <DependentUpon>DonationDialog.cs</DependentUpon>
     </Compile>
-    <Compile Include="EmbeddedTextureLoader.cs" />
+    <Compile Include="Rendering\Texture\EmbeddedTextureLoader.cs" />
     <Compile Include="EnumExtensionsNet4Backported.cs" />
     <Compile Include="ExportDialog.cs">
       <SubType>Form</SubType>
@@ -95,12 +95,12 @@
       <AutoGen>True</AutoGen>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
-    <Compile Include="FileAssociations.cs" />
+    <Compile Include="IO\FileAssociations.cs" />
     <Compile Include="FolderSetDisplay.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="FpsCameraController.cs" />
-    <Compile Include="FpsTracker.cs" />
+    <Compile Include="Rendering\Scene\FpsCameraController.cs" />
+    <Compile Include="Rendering\Scene\FpsTracker.cs" />
     <Compile Include="Properties\GraphicsSettings.Designer.cs">
       <DependentUpon>GraphicsSettings.settings</DependentUpon>
       <AutoGen>True</AutoGen>
@@ -109,14 +109,14 @@
     <Compile Include="HierarchyInspectionView.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="ICameraController.cs" />
-    <Compile Include="ImageFromResource.cs" />
+    <Compile Include="Rendering\Scene\ICameraController.cs" />
+    <Compile Include="IO\ImageFromResource.cs" />
     <Compile Include="InspectionView.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="ISceneRenderer.cs" />
-    <Compile Include="LogPipe.cs" />
-    <Compile Include="LogStore.cs" />
+    <Compile Include="Rendering\Scene\ISceneRenderer.cs" />
+    <Compile Include="IO\LogPipe.cs" />
+    <Compile Include="IO\LogStore.cs" />
     <Compile Include="LogViewer.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -129,11 +129,11 @@
     <Compile Include="MainWindow.Designer.cs">
       <DependentUpon>MainWindow.cs</DependentUpon>
     </Compile>
-    <Compile Include="MaterialInspectionView.cs" />
-    <Compile Include="MaterialMapper.cs" />
-    <Compile Include="MaterialMapperClassicGl.cs" />
-    <Compile Include="MaterialMapperModernGl.cs" />
-    <Compile Include="MaterialPreviewRenderer.cs" />
+    <Compile Include="Rendering\Material\MaterialInspectionView.cs" />
+    <Compile Include="Rendering\Material\MaterialMapper.cs" />
+    <Compile Include="Rendering\Material\MaterialMapperClassicGl.cs" />
+    <Compile Include="Rendering\Material\MaterialMapperModernGl.cs" />
+    <Compile Include="Rendering\Material\MaterialPreviewRenderer.cs" />
     <Compile Include="MaterialThumbnailControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -155,63 +155,63 @@
     <Compile Include="NodeItemsDialog.Designer.cs">
       <DependentUpon>NodeItemsDialog.cs</DependentUpon>
     </Compile>
-    <Compile Include="NodePurpose.cs" />
-    <Compile Include="OpenTkToAssimp.cs" />
-    <Compile Include="OrbitCameraController.cs" />
-    <Compile Include="OverlayBoundingBox.cs" />
-    <Compile Include="OverlayLightSource.cs" />
-    <Compile Include="OverlayNormals.cs" />
-    <Compile Include="OverlaySkeleton.cs" />
-    <Compile Include="PickingCameraController.cs" />
+    <Compile Include="Rendering\Scene\NodePurpose.cs" />
+    <Compile Include="IO\OpenTkToAssimp.cs" />
+    <Compile Include="Rendering\Scene\OrbitCameraController.cs" />
+    <Compile Include="UI\OverlayBoundingBox.cs" />
+    <Compile Include="UI\OverlayLightSource.cs" />
+    <Compile Include="UI\OverlayNormals.cs" />
+    <Compile Include="UI\OverlaySkeleton.cs" />
+    <Compile Include="Rendering\Scene\PickingCameraController.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Properties\Resources.cs" />
     <Compile Include="RenderControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Renderer.cs" />
-    <Compile Include="RenderFlags.cs" />
-    <Compile Include="RenderMesh.cs" />
-    <Compile Include="RoundedRectangle.cs" />
+    <Compile Include="Rendering\Renderer.cs" />
+    <Compile Include="Rendering\RenderFlags.cs" />
+    <Compile Include="Rendering\Mesh\RenderMesh.cs" />
+    <Compile Include="UI\RoundedRectangle.cs" />
     <Compile Include="RunOnceGuard.cs" />
-    <Compile Include="Scene.cs" />
-    <Compile Include="SceneAnimator.cs" />
-    <Compile Include="SceneRendererClassicGl.cs" />
-    <Compile Include="SceneRendererModernGl.cs" />
-    <Compile Include="SceneRendererShared.cs" />
+    <Compile Include="Rendering\Scene\Scene.cs" />
+    <Compile Include="Rendering\Animation\SceneAnimator.cs" />
+    <Compile Include="Rendering\Scene\SceneRendererClassicGl.cs" />
+    <Compile Include="Rendering\Scene\SceneRendererModernGl.cs" />
+    <Compile Include="Rendering\Scene\SceneRendererShared.cs" />
     <Compile Include="SettingsDialog.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="SettingsDialog.Designer.cs">
       <DependentUpon>SettingsDialog.cs</DependentUpon>
     </Compile>
-    <Compile Include="Shader.cs" />
-    <Compile Include="ShaderGen.cs" />
-    <Compile Include="SphereGeometry.cs" />
-    <Compile Include="Tab.cs" />
+    <Compile Include="Rendering\Shader\Shader.cs" />
+    <Compile Include="Rendering\Shader\ShaderGen.cs" />
+    <Compile Include="Rendering\Mesh\SphereGeometry.cs" />
+    <Compile Include="UI\Tab.cs" />
     <Compile Include="TabUiSkeleton.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="TextOverlay.cs" />
-    <Compile Include="Texture.cs" />
+    <Compile Include="UI\TextOverlay.cs" />
+    <Compile Include="Rendering\Texture\Texture.cs" />
     <Compile Include="TextureDetailsDialog.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="TextureDetailsDialog.Designer.cs">
       <DependentUpon>TextureDetailsDialog.cs</DependentUpon>
     </Compile>
-    <Compile Include="TextureExporter.cs" />
-    <Compile Include="TextureInspectionView.cs" />
-    <Compile Include="TextureLoader.cs" />
-    <Compile Include="TextureQueue.cs" />
-    <Compile Include="TextureSet.cs" />
+    <Compile Include="IO\TextureExporter.cs" />
+    <Compile Include="Rendering\Texture\TextureInspectionView.cs" />
+    <Compile Include="Rendering\Texture\TextureLoader.cs" />
+    <Compile Include="Rendering\Texture\TextureQueue.cs" />
+    <Compile Include="Rendering\Texture\TextureSet.cs" />
     <Compile Include="TextureThumbnailControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="ThumbnailControlBase.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="ThumbnailViewBase.cs" />
+    <Compile Include="UI\ThumbnailViewBase.cs" />
     <Compile Include="TimeSlideControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -224,8 +224,8 @@
     <Compile Include="TrafoMatrixViewControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="UiState.cs" />
-    <Compile Include="Viewport.cs" />
+    <Compile Include="UI\UiState.cs" />
+    <Compile Include="UI\Viewport.cs" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="About.resources" />
@@ -330,5 +330,6 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
