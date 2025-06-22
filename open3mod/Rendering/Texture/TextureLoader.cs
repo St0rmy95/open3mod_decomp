@@ -26,7 +26,7 @@ namespace open3mod
 					this.SetFromStream(stream);
 				}
 			}
-			catch (Exception)
+			catch (Exception ex)
 			{
 				this._result = TextureLoader.LoadResult.FileNotFound;
 			}
